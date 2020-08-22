@@ -1,14 +1,14 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 
 import "./App.css";
-
-// import Login from "./components/LoginPage/LoginPage.component";
+import "react-toastify/dist/ReactToastify.css";
 import Battle from "./components/Battle/Battle.component";
 
 const App = () => {
   return (
     <div>
-      {/* <Login /> */}
+      <ToastContainer position="bottom-center" />
       <Battle />
     </div>
   );

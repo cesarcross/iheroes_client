@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+// import { toast } from "react-toastify";
 
 import {
   Arena,
@@ -108,8 +109,6 @@ const Battle = () => {
       pickHero.name === "Catwoman" ||
       pickHero.name === "Chapolin"
     ) {
-      // console.log(heroes, pickHero);
-
       const updatedHeroes = heroes.filter((hero) =>
         hero.name !== pickHero.name ? hero : ""
       );
@@ -135,8 +134,6 @@ const Battle = () => {
     setTimeout(() => {
       setPickHero("");
     }, 0);
-
-    // console.log(heroes, pickHero);
   };
 
   // ===================================================================================
@@ -211,7 +208,10 @@ const Battle = () => {
         ""
       )}
 
-      <Result>{matchResult ? <p>{matchResult}</p> : ""}</Result>
+      <Result>
+        {matchResult ? <p>{matchResult}</p> : ""}
+        {console.log(matchResult)}
+      </Result>
     </>
   );
 };
