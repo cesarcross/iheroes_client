@@ -1,18 +1,5 @@
 import { toast } from "react-toastify";
 
-// export const match = (dangerLevel, hero) => {
-//   if (
-//     (dangerLevel === "Gold" && hero.rank === "S") ||
-//     (dangerLevel === "Silver" && hero.rank === "A") ||
-//     (dangerLevel === "Copper" && hero.rank === "B") ||
-//     (dangerLevel === "Wood" && hero.rank === "C")
-//   ) {
-//     return `${hero.name} Won!!`;
-//   }
-
-//   return `${hero.name} was defeated...`;
-// };
-
 export const match = (dangerLevel, hero) => {
   if (
     (dangerLevel === "Gold" && hero.rank === "S") ||
@@ -20,8 +7,8 @@ export const match = (dangerLevel, hero) => {
     (dangerLevel === "Copper" && hero.rank === "B") ||
     (dangerLevel === "Wood" && hero.rank === "C")
   ) {
-    return `${hero.name} Won!!`;
+    return toast.success(` ${hero.name} Won!! ✌️`);
   }
 
-  return `${hero.name} was defeated...`;
+  return toast.error(` ${hero.name} was defeated... 💀`);
 };
