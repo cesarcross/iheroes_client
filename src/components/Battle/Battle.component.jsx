@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 
 import {
   Arena,
@@ -108,8 +109,6 @@ const Battle = () => {
       pickHero.name === "Catwoman" ||
       pickHero.name === "Chapolin"
     ) {
-      // console.log(heroes, pickHero);
-
       const updatedHeroes = heroes.filter((hero) =>
         hero.name !== pickHero.name ? hero : ""
       );
@@ -135,9 +134,9 @@ const Battle = () => {
     setTimeout(() => {
       setPickHero("");
     }, 0);
-
-    // console.log(heroes, pickHero);
   };
+
+  const toaster = () => toast.success("Mensagem enviada com sucesso! ⚽️");
 
   // ===================================================================================
 
@@ -148,6 +147,7 @@ const Battle = () => {
         cosmic portals. It is your mission to identify the iminent danger and
         recruit the right Hero to save the day!
       </Title>
+      <BattleButton onClick={toaster}>Toast!</BattleButton>
       <Arena>
         <Threats>
           <IdentifyThreat onClick={generateThreat}>
