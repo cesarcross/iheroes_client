@@ -224,6 +224,8 @@ export const BattleButton = styled.button`
 `;
 
 export const Result = styled.div`
+  display: none;
+
   p {
     color: #fff;
     font-size: 2.7rem;
