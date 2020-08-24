@@ -8,7 +8,7 @@ import Battle from "./components/Battle/Battle.component";
 const App = () => {
   return (
     <div>
-      <ToastContainer position="bottom-center" />
+      <ToastContainer position="top-center" />
       <Battle />
     </div>
   );

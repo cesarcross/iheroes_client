@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-// import { toast } from "react-toastify";
 
 import {
   Arena,
@@ -13,14 +12,12 @@ import {
   BattleButton,
   ChosenHero,
   CreateHero,
-  Result,
 } from "./Battle.style";
 import { match } from "./Match";
 
 const Battle = () => {
   const [pickHero, setPickHero] = useState("");
   const [heroes, setHeroes] = useState([]);
-  const [matchResult, setMatchResult] = useState("");
 
   const random = (el) => el[Math.floor(Math.random() * el.length)];
   const heroesRanks = ["S", "A", "B", "C"];
@@ -199,19 +196,12 @@ const Battle = () => {
         </div>
       </Arena>
       {threat && pickHero ? (
-        <BattleButton
-          onClick={() => setMatchResult(match(threat.dangerLevel, pickHero))}
-        >
+        <BattleButton onClick={() => match(threat.dangerLevel, pickHero)}>
           Battle!
         </BattleButton>
       ) : (
         ""
       )}
-
-      <Result>
-        {matchResult ? <p>{matchResult}</p> : ""}
-        {console.log(matchResult)}
-      </Result>
     </>
   );
 };

@@ -222,13 +222,3 @@ export const BattleButton = styled.button`
     height: auto;
   }
 `;
-
-export const Result = styled.div`
-  display: none;
-
-  p {
-    color: #fff;
-    font-size: 2.7rem;
-    text-align: center;
-  }
-`;
